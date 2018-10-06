@@ -1,0 +1,67 @@
+sudo: false
+
+language: java
+
+matrix:
+  include:
+
+  - name: "JK8 - generated class direct static import"
+    jdk: openjdk8
+    script:
+     - javac Processor.java
+     - javac -processor Processor StaticImport.java
+
+  - name: "JK8 - generated class inherited static import"
+    jdk: openjdk8
+    script:
+     - javac Processor.java
+     - javac -processor Processor Extend.java UseExtend.java
+
+  - name: "JK9 - generated class direct static import"
+    jdk: openjdk9
+    script:
+     - javac Processor.java
+     - javac -processor Processor StaticImport.java
+
+  - name: "JK9 - generated class inherited static import"
+    jdk: openjdk9
+    script:
+     - javac Processor.java
+     - javac -processor Processor Extend.java UseExtend.java
+
+  - name: "JK10 - generated class direct static import"
+    jdk: openjdk10
+    script:
+     - javac Processor.java
+     - javac -processor Processor StaticImport.java
+
+  - name: "JK10 - generated class inherited static import"
+    jdk: openjdk10
+    script:
+     - javac Processor.java
+     - javac -processor Processor Extend.java UseExtend.java
+
+  - name: "JK11 - generated class direct static import"
+    jdk: openjdk11
+    script:
+     - javac Processor.java
+     - javac -processor Processor StaticImport.java
+
+  - name: "JK11 - generated class inherited static import"
+    jdk: openjdk11
+    script:
+     - javac Processor.java
+     - javac -processor Processor Extend.java UseExtend.java
+
+
+  - name: "JK12 - generated class direct static import"
+    jdk: openjdk-ea
+    script:
+     - javac Processor.java
+     - javac -processor Processor StaticImport.java
+
+  - name: "JK12 - generated class inherited static import"
+    jdk: openjdk-ea
+    script:
+     - javac Processor.java
+     - javac -processor Processor Extend.java UseExtend.java
